@@ -1,0 +1,97 @@
+Basic reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the heading */
+h1 {
+    color: rgb(97, 102, 99);
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    background-color: #4b6d44;
+    position: relative;
+    width: 100%;
+}
+
+/* Hide the links inside the navigation menu */
+.topnav #myLinks {
+    display: none; /* Initially hidden */
+}
+
+/* Style navigation menu links */
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+/* Style the hamburger icon */
+.topnav a.icon {
+    background: none;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 14px;
+    cursor: pointer;
+}
+
+/* Create the hamburger icon lines */
+.topnav a.icon::before,
+.topnav a.icon::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+/* When the menu is open, change the hamburger icon lines */
+.topnav.responsive a.icon::before {
+    transform: rotate(-45deg) translate(-5px, 6px); /* Rotate top line */
+}
+
+.topnav.responsive a.icon::after {
+    transform: rotate(45deg) translate(-5px, -6px); /* Rotate bottom line */
+}
+
+/* Show the menu when the hamburger icon is clicked */
+.topnav.responsive #myLinks {
+    display: block; /* Menu becomes visible */
+    text-align: center;
+}
+
+/* Style for when the menu is in responsive mode */
+.topnav.responsive {
+    position: relative;
+    background-color: #4b6d44;
+}
+
+.topnav.responsive a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 14px 16px;
+}
+
+/* Add smooth transition for the links */
+#myLinks {
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.topnav.responsive #myLinks {
+    max-height: 500px; /* Enough space to fit all menu items */
+}
